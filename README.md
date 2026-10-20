@@ -5,12 +5,12 @@ This is a PHP language API library for building tables for rendering in HTML.
 This library is intended for simplicity and velocity.
 Instead of mixing PHP with inline HTML code (which is difficult to read),
 or utilizing heavy frameworks (which are a time-sink to get acquainted with),
-this API library enables developers to build HTML code for rendering tables with clearly
-typed object-oriented PHP code.
+this API library enables developers to programatically build HTML code for rendering tables.
 
 This is also useful to update table rows and columns via AJAX.
 
-Minimum required PHP: 8.0
+* Minimum required PHP: 8.0
+* AI was not used in creating this library.
 
 ## Example
 A simple report table:
@@ -19,6 +19,7 @@ A simple report table:
 require "table.php";
 use ITDarkArts\HTML\Table\table;
 
+// Widgets data is already validated.
 $widgets_data = $database->get_widgets_data();
 
 $table = new table(
@@ -32,6 +33,7 @@ $table->row(["Widget", "Quality", "Stock", "Value"]);
 
 $table->tbody();
 foreach($widgets_data as $row) {
+    // Already validated that each row is an array of four columns.
     $table->row($row);
 }
 
