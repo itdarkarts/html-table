@@ -16,7 +16,8 @@ This is also useful to update table rows and columns via AJAX.
 A simple report table:
 ```php
 <?php
-require "table.php";
+// Acquired via Composer.
+require "vendor/autoload.php";
 use ITDarkArts\HTML\Table\table;
 
 // Widgets data is already validated.
